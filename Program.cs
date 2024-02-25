@@ -1,21 +1,25 @@
-﻿Console.WriteLine("Выберите задачу: 1, 2, 3, 4");
-int num_task = Convert.ToInt32(Console.ReadLine());
-switch (num_task)
-{
-    case 1:
-        FirstTask();
-        break;
-    case 2:
-        SecondTask();
-        break;
-    case 3:
-        ThirdTask();
-        break;
-    case 4:
-        FourthTask();
-        break;
+﻿while (true) {
+    Console.WriteLine("Выберите задачу: 1, 2, 3, 4");
+    int num_task = Convert.ToInt32(Console.ReadLine());
+    switch (num_task)
+    {
+        case 1:
+            FirstTask();
+            break;
+        case 2:
+            SecondTask();
+            break;
+        case 3:
+            ThirdTask();
+            break;
+        case 4:
+            FourthTask();
+            break;
+        default: 
+            Console.WriteLine("Не верный пункт меню");
+            break;
+    }
 }
-
 //Напишите программу, которая принимает на вход число и проверяет, кратно ли оно одновременно 7 и 23.
 void FirstTask()
 {
@@ -88,11 +92,15 @@ void FourthTask()
     Console.WriteLine("Программа, которая на вход принимает натуральное число N, а на выходе показывает его цифры через запятую.");
     int i = 1, N = new Random().Next(), digitCount = (int)Math.Log10(N) + 1;
     Console.WriteLine($"{N}");
-    while (i < digitCount + 1){
-        if (i == digitCount) {
-            Console.Write($"{(int)(N / Math.Pow(10,digitCount - i) % 10)}");
-        } else {
-            Console.Write($"{(int)(N / Math.Pow(10,digitCount - i) % 10)}, ");
+    while (i < digitCount + 1)
+    {
+        if (i == digitCount)
+        {
+            Console.Write($"{(int)(N / Math.Pow(10, digitCount - i) % 10)}\n");
+        }
+        else
+        {
+            Console.Write($"{(int)(N / Math.Pow(10, digitCount - i) % 10)}, ");
         }
         i++;
     }
